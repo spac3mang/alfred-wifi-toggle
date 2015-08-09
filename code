@@ -1,0 +1,6 @@
+FOO=$(networksetup -getairportpower en0 | awk '{print $NF}')
+if [[ $FOO == "On" ]]; then
+	networksetup -setairportpower en0 off
+else
+	networksetup -setairportpower en0 on
+fi
